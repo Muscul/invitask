@@ -1,0 +1,8 @@
+<p>Hello!</p>
+
+<p>You have invited you to <%= configatron.host %>, you can accept it through the link below.</p>
+
+
+<p><%= link_to 'Accept invitation', "#{@invitation.token_url}" %></p>
+
+<p>If you don't want to accept the invitation, please ignore this email.</p>

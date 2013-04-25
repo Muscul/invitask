@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+    
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <% if current_user && current_user.phone.empty? %>
+      <%= render "layouts/suggest_for_input_registration_fields" %>
+    <% end %>
+    <ul>
+      <li>
+        <%= link_to "index.php", root_path %>
+      <li>
+        <%= link_to "Invitations", invitations_path %>
+      <% unless current_user %>
+        <li>
+          <%= link_to "Sign In", new_user_session_path %>
+      <% else %>
+        <li>
+          <%= link_to "My Profile", edit_user_registration_path %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+
+      <% end %>
+    </ul>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
