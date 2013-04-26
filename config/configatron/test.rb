@@ -3,4 +3,3 @@
 # Example:
 #   configatron.file.storage = :local
 
-configatron.host = "localhost:3000"
