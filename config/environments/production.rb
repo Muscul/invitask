@@ -72,7 +72,6 @@ Invitask::Application.configure do
     :port           => ENV['SMTP_PORT'],
     :user_name      => ENV['SMTP_USERNAME'],
     :password       => ENV['SMTP_PASSWORD'],
-    :domain         => ENV['SMTP_DOMAIN'],
     :enable_starttls_auto => true,
     :authentication => :plain,    
   }
