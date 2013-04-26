@@ -19,4 +19,7 @@ class Invitation < ActiveRecord::Base
     UserMailer.invitation_instructions(self).deliver
   end
 
+  def self.get_random_token
+    Devise.friendly_token[0,20]
+  end
 end

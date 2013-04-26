@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
 
   def new
     @invitation = Invitation.new
-    @invitation.token = Devise.friendly_token[0,20]
+    @invitation.token = Invitation.get_random_token
   end
 
   def create

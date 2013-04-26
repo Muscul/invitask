@@ -40,6 +40,13 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'validates_formatting_of'
 gem 'phony_rails'
-gem "nifty-generators", :group => :development
-gem "mocha", :group => :test
 gem 'configatron'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec'
+  gem 'email_spec'
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "nifty-generators"
+end

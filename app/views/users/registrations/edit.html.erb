@@ -7,7 +7,7 @@
   <%= f.text_field :name %></div>
 
   <div><%= f.label :phone %><br />
-  <%= f.text_field :phone, :autofocus => current_user.phone.empty? ? true : false %></div>
+  <%= f.text_field :phone, :autofocus => current_user.phone ? true : false %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
