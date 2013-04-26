@@ -6,10 +6,6 @@
 # 
 #   configatron.file.storage = :s3
 
-configatron.emails.invitation.subject = 'You have invited!'
-
 configatron.host = "localhost:3000"
 
-configatron.emails.default_url_options.host = "localhost:3000"
-
-configatron.emails.smtp_settings = {}
+configatron.emails.invitation.subject = 'You have invited!'
